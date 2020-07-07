@@ -6,8 +6,7 @@ mkdir -p workspace
 
 if [ ! -d .dfl/DeepFaceLab ]; then
   echo "Cloning DeepFaceLab"
-  cd .dfl
-  git clone "https://github.com/iperov/DeepFaceLab.git"
+  git clone "https://github.com/iperov/DeepFaceLab.git" .dfl/DeepFaceLab
 fi
 
 if [ ! -d .dfl/env ]; then
