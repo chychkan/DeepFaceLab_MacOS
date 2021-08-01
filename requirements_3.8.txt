@@ -1,0 +1,10 @@
+numpy==1.19.5
+opencv-python==4.1.2.30
+scipy==1.4.1
+tensorflow==2.5.0
+colorama==0.4.3
+tqdm==4.47.0
+ffmpeg-python==0.2.0
+Pillow==7.2.0
+scikit-image==0.17.2
+h5py==3.1.0
