@@ -24,7 +24,7 @@ if [[ ! -z "$version" && -f "requirements_$version.txt" ]]; then
   reqs_file="requirements_$version.txt"
 fi
 
-echo "Using $reqs_file"
+echo "Using $reqs_file for $(python -V)"
 pip install -r $reqs_file
 
 echo "Done."
