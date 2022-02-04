@@ -6,16 +6,17 @@ set -e
 mkdir -p .dfl
 mkdir -p workspace
 
-architecture=''
-if [[ ! -z "$(uname -a | grep -oE ' arm64$')" ]]; then
-  architecture='arm64'
-fi
+is_arm64() {
+  [ "$(uname -m)" == "arm64" ]
+}
+
+[ is_arm64 ] && echo "Running on Apple M1 chip"
 
 if [ ! -d .dfl/DeepFaceLab ]; then
   echo "Cloning DeepFaceLab"
   git clone --no-single-branch --depth 1 "https://github.com/chychkan/DeepFaceLab.git" .dfl/DeepFaceLab
 
-  if [ "$architecture" == "arm64" ]; then
+  if [ is_arm64 ]; then
     (cd .dfl/DeepFaceLab; git checkout support-arm64)
   fi
 fi
@@ -26,6 +27,8 @@ fi
 
 source .dfl/env/bin/activate
 
+python -m pip install --upgrade pip
+
 version=$(python -V | cut -f 2 -d ' ' | cut -f 1,2 -d .)
 reqs_file='requirements.txt'
 
@@ -35,7 +38,7 @@ if [[ ! -z "$version" && -f "requirements_$version.txt" ]]; then
 fi
 
 architecture_suffix=''
-if [ "$architecture" == "arm64" ] && [ -f "requirements${version_suffix}_arm64.txt" ]; then
+if [ is_arm64 ] && [ -f "requirements${version_suffix}_arm64.txt" ]; then
   architecture_suffix="_arm64"
 fi
 
@@ -43,7 +46,7 @@ reqs_file="requirements${version_suffix}${architecture_suffix}.txt"
 
 echo "Using $reqs_file for $(python -V)"
 
-if [[ ! -z "$architecture" ]]; then
+if [ is_arm64 ]; then
   if [[ -z "$(brew ls --versions hdf5)" ]]; then
     echo "ERROR: HDF5 needs to be installed to run DeepFaceLab on M1 chip."
     echo "You can install it with 'brew install hdf5'. For more details, see https://formulae.brew.sh/formula/hdf5"
