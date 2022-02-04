@@ -48,10 +48,13 @@ if [[ ! -z "$architecture" ]]; then
   fi
 
   cython_pkg="$(cat $reqs_file | grep -E 'cython==.+')"
-  pip --no-cache-dir install $cython_pkg
+  pip --no-cache-dir install "$cython_pkg"
+
+  numpy_pkg="$(cat $reqs_file | grep -E 'numpy==.+')"
+  pip install "$numpy_pkg"
 
   h5py_pkg="$(cat $reqs_file | grep -E 'h5py==.+')"
-  HDF5_DIR="$(brew --prefix hdf5)" pip --no-cache-dir install --no-build-isolation $h5py_pkg
+  HDF5_DIR="$(brew --prefix hdf5)" pip --no-cache-dir install --no-build-isolation "$h5py_pkg"
 fi
 
 pip --no-cache-dir install -r $reqs_file
