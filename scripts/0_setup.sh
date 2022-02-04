@@ -13,10 +13,10 @@ fi
 
 if [ ! -d .dfl/DeepFaceLab ]; then
   echo "Cloning DeepFaceLab"
-  git clone --depth 1 "https://github.com/chychkan/DeepFaceLab.git" .dfl/DeepFaceLab
+  git clone --no-single-branch --depth 1 "https://github.com/chychkan/DeepFaceLab.git" .dfl/DeepFaceLab
 
   if [ "$architecture" == "arm64" ]; then
-    git checkout support-arm64
+    (cd .dfl/DeepFaceLab; git checkout support-arm64)
   fi
 fi
 
@@ -35,7 +35,7 @@ if [[ ! -z "$version" && -f "requirements_$version.txt" ]]; then
 fi
 
 architecture_suffix=''
-if [ "$architecture" == "arm64" && -f "requirements${version_suffix}_arm64.txt" ]; then
+if [ "$architecture" == "arm64" ] && [ -f "requirements${version_suffix}_arm64.txt" ]; then
   architecture_suffix="_arm64"
 fi
 
