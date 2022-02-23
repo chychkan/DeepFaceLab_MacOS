@@ -1,7 +1,7 @@
 numpy==1.19.2
 opencv-contrib-python-headless==4.1.2.30
 scipy==1.5.4
-tensorflow==2.6.0
+tensorflow==2.6.1
 colorama==0.4.4
 tqdm==4.62.3
 ffmpeg-python==0.2.0
@@ -9,3 +9,4 @@ Pillow==8.4.0
 scikit-image==0.17.2
 h5py==3.1.0
 PyQt5==5.15.4
+numexpr==2.7.3
