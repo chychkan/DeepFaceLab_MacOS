@@ -62,6 +62,11 @@ if is_arm64; then
 
   h5py_pkg="$(cat $reqs_file | grep -E 'h5py==.+')"
   HDF5_DIR="$(brew --prefix hdf5)" pip --no-cache-dir install --no-build-isolation "$h5py_pkg"
+elif [ "$version" == "3.10" ]; then
+  (cd .dfl/DeepFaceLab; git checkout support-opencv45)
+
+  numpy_pkg="$(cat $reqs_file | grep -E 'numpy==.+')"
+  pip install "$numpy_pkg"
 fi
 
 pip --no-cache-dir install -r $reqs_file
