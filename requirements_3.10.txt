@@ -9,4 +9,4 @@ ffmpeg-python==0.2.0
 Pillow==8.4.0
 scikit-image==0.19.2
 h5py==3.6.0
-PyQt5==5.15.4
+PyQt5==5.15.6
