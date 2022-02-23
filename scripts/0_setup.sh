@@ -32,6 +32,10 @@ python -m pip install --upgrade pip
 version=$(python -V | cut -f 2 -d ' ' | cut -f 1,2 -d .)
 reqs_file='requirements.txt'
 
+if [ "$version" == "3.10" ]; then
+  (cd .dfl/DeepFaceLab; git checkout support-opencv45)
+fi
+
 version_suffix=''
 if [[ ! -z "$version" && -f "requirements_$version.txt" ]]; then
   version_suffix="_$version"
