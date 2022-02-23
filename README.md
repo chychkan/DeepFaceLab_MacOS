@@ -4,6 +4,10 @@ This project provides scripts inspired by [DeepFaceLab_Linux](https://github.com
 
 You'll need `git`, `ffmpeg`, `python3` and python module `virtualenv` available to be able to execute these scripts. The scripts will create a virtual env sandbox and will install all necessary dependencies there, so your main installation of `python3` will be left intact.
 
+## NOTE: Apple M1 chip
+
+Currently there's limited support for Apple M1 laptops. You can do model training, but the XSeg editor currently does not work (the DeepFaceLab codebase is not compatible with PyQt6).
+
 ## Setup
 
 **Tools**
@@ -13,6 +17,9 @@ Make sure you have installed:
 - [FFmpeg](https://ffmpeg.org/) (check with `ffmpeg -version`)
 - [Python 3](https://www.python.org/) (check with `python3 --version`)
 - [Virtualenv](https://github.com/pypa/virtualenv) (check with `virtualenv --version`)
+
+For **Apple M1** laptops you also need [hdf5](https://formulae.brew.sh/formula/hdf5) lib installed.
+Check if you have it with `brew ls --versions hdf5`. Install it with `brew install hdf5`.
 
 **Clone and setup**
 
