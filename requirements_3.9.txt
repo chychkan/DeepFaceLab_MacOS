@@ -1,7 +1,7 @@
 numpy==1.21.4
 opencv-contrib-python-headless==4.5.1.48
 scipy==1.7.2
-tensorflow==2.7.0
+tensorflow==2.8.1
 colorama==0.4.4
 tqdm==4.62.3
 ffmpeg-python==0.2.0
