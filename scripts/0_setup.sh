@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 cd "$(dirname $0)/.."
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 set -e
 
@@ -7,7 +8,7 @@ mkdir -p .dfl
 mkdir -p workspace
 
 is_arm64() {
-  [ "$(uname -m)" == "arm64" ]
+  [ "$(uname -sm)" == "Darwin arm64" ]
 }
 
 is_arm64 && echo "Running on Apple M1 chip"
