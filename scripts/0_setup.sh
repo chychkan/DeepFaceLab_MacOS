@@ -15,7 +15,7 @@ is_arm64 && echo "Running on Apple M1 chip"
 
 if [ ! -d .dfl/DeepFaceLab ]; then
   echo "Cloning DeepFaceLab"
-  git clone --no-single-branch --depth 1 "https://github.com/chychkan/DeepFaceLab.git" .dfl/DeepFaceLab
+  git clone --no-single-branch --depth 1 "https://github.com/Smiril/DeepFaceLab_Apple-Silicon.git" .dfl/DeepFaceLab
 
   if is_arm64; then
     (cd .dfl/DeepFaceLab; git checkout support-arm64)
