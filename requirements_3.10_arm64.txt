@@ -79,7 +79,6 @@ tensorboard-data-server<=0.6.1
 tensorboard-plugin-wit<=1.8.1
 tensorflow-estimator<=2.9.0
 tensorflow-macos<=2.9.0 
-tensorflow-gpu==2.4.0
 tensorflow-metal
 termcolor<=1.1.0
 typing-extensions<=4.3.0
