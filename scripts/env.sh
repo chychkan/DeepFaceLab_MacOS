@@ -7,3 +7,4 @@ WORKSPACE=workspace
 source .dfl/env/bin/activate
 
 set -e
+
