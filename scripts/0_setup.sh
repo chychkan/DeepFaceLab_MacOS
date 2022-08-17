@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 cd "$(dirname $0)/.."
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 set -e
 
@@ -7,14 +8,14 @@ mkdir -p .dfl
 mkdir -p workspace
 
 is_arm64() {
-  [ "$(uname -m)" == "arm64" ]
+  [ "$(uname -sm)" == "Darwin arm64" ]
 }
 
 is_arm64 && echo "Running on Apple M1 chip"
 
 if [ ! -d .dfl/DeepFaceLab ]; then
   echo "Cloning DeepFaceLab"
-  git clone --no-single-branch --depth 1 "https://github.com/chychkan/DeepFaceLab.git" .dfl/DeepFaceLab
+  git clone --no-single-branch --depth 1 "https://github.com/iperov/DeepFaceLab.git" .dfl/DeepFaceLab
 
   if is_arm64; then
     (cd .dfl/DeepFaceLab; git checkout support-arm64)
@@ -27,9 +28,9 @@ fi
 
 source .dfl/env/bin/activate
 
-python -m pip install --upgrade pip
+python3 -m pip install --upgrade pip
 
-version=$(python -V | cut -f 2 -d ' ' | cut -f 1,2 -d .)
+version=$(python3 -V | cut -f 2 -d ' ' | cut -f 1,2 -d .)
 reqs_file='requirements.txt'
 
 version_suffix=''
@@ -44,7 +45,7 @@ fi
 
 reqs_file="requirements${version_suffix}${architecture_suffix}.txt"
 
-echo "Using $reqs_file for $(python -V)"
+echo "Using $reqs_file for $(python3 -V)"
 
 if is_arm64; then
   if [[ -z "$(brew ls --versions hdf5)" ]]; then
