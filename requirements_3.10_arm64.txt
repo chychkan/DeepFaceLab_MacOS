@@ -87,7 +87,7 @@ werkzeug<=2.1.2
 wrapt<=1.14.1
 fastcluster>=1.2.4
 matplotlib>=3.5.1
-ffmpeg-python<=0.2.0
+ffmpeg-python==0.2.0
 imageio-ffmpeg>=0.4.7
 ffmpy
 torch<=1.12.0
