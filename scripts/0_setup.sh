@@ -18,7 +18,7 @@ if [ ! -d .dfl/DeepFaceLab ]; then
   git clone --no-single-branch --depth 1 "https://github.com/Smiril/DeepFaceLab_Apple-Silicon.git" .dfl/DeepFaceLab
 
   if is_arm64; then
-    (cd .dfl/DeepFaceLab; git checkout support-arm64)
+    (cd .dfl/DeepFaceLab; git checkout master)
   fi
 fi
 
