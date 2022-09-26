@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-source env.sh
+cd "$(dirname $0)/.."
+source scripts/env.sh
 
-$DFL_PYTHON "$DFL_SRC/main.py" extract \
+$DFL_PYTHON "$DFL_MAIN" extract \
     --input-dir "$DFL_WORKSPACE/data_src" \
     --output-dir "$DFL_WORKSPACE/data_src/aligned" \
     --multi-gpu \
