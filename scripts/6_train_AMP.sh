@@ -7,5 +7,5 @@ $DFL_PYTHON "$DFL_SRC" train \
     --training-data-dst-dir "$DFL_WORKSPACE/data_dst" \
     --model-dir "$DFL_WORKSPACE/model" \
     --model AMP \
-    --cpu-only
+    --cpu-only 
 
