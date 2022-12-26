@@ -1,12 +1,30 @@
 ## Intro
 
-This project provides scripts inspired by [DeepFaceLab_Linux](https://github.com/lbfs/DeepFaceLab_Linux) to setup and run [DeepFaceLab](https://github.com/iperov/DeepFaceLab) on MacOS.
+This project provides scripts inspired by [DeepFaceLab_Linux](https://github.com/lbfs/DeepFaceLab_Linux) to setup and run [DeepFaceLab](https://github.com/Smiril/DeepFaceLab_Apple-Silicon) on MacOS.
 
 You'll need `git`, `ffmpeg`, `python3` and python module `virtualenv` available to be able to execute these scripts. The scripts will create a virtual env sandbox and will install all necessary dependencies there, so your main installation of `python3` will be left intact.
 
 ## NOTE: Apple M1 chip
 
 Currently there's limited support for Apple M1 laptops. You can do model training, but the XSeg editor currently does not work (the DeepFaceLab codebase is not compatible with PyQt6).
+
+## NOTE: FULL RUN
+
+```
+
+cd scripts
+./2_extract_images_from_video_data_src.sh  
+./3_extract_images_from_video_data_dst.sh
+./4.1_data_src_extract_faces_S3FD.sh 
+./5_data_dst_extract_faces_S3FD_all_GPU.sh 
+./5.1_data_dst_extract_faces_S3FD.sh 
+./5.2_data_dst_util_faceset_enhance.sh
+./5.3_data_dst_sort_by_face_yaw.sh
+./5.4_data_dst_facesettool.sh
+./6_train_Quick96.sh 
+./8_converted_to_avi.sh 
+
+```
 
 ## Setup
 
@@ -23,8 +41,8 @@ Check if you have it with `brew ls --versions hdf5`. Install it with `brew insta
 
 **Clone and setup**
 
-1. Clone this repository (`git clone https://github.com/chychkan/DeepFaceLab_MacOS.git`)
-2. Run script `./scripts/0_setup.sh` to get [DeepFaceLab](https://github.com/iperov/DeepFaceLab), create virtual env and install necessary Python dependencies. This may take several minutes to run.
+1. Clone this repository (`git clone https://github.com/Smiril/DeepFaceLab_MacOS.git`)
+2. Run script `./scripts/0_setup.sh` to get [DeepFaceLab](https://github.com/Smiril/DeepFaceLab_apple-Silicon.git), create virtual env and install necessary Python dependencies. This may take several minutes to run.
 
 Now you can put your `data_src.mp4` and `data_dst.mp4` files into the `workspace/` dir and start running scripts from the `scripts/` dir.
 
