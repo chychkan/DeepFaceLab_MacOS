@@ -22,6 +22,7 @@ cd scripts
 ./5.3_data_dst_sort_by_face_yaw.sh
 ./5.4_data_dst_facesettool.sh
 ./6_train_Quick96.sh 
+./7_convert_Quick96.sh
 ./8_converted_to_avi.sh 
 
 ```
