@@ -3,7 +3,7 @@ cd "$(dirname $0)/.."
 source scripts/env.sh
 
 $DFL_PYTHON "$DFL_SRC" merge \
-    --input-dir "$DFL_WORKSPACE/data_src" \
+    --input-dir "$DFL_WORKSPACE/data_dst" \
     --output-dir "$DFL_WORKSPACE/data_src/merged" \
     --output-mask-dir "$DFL_WORKSPACE/data_src/masked" \
     --aligned-dir "$DFL_WORKSPACE/data_src/aligned" \
