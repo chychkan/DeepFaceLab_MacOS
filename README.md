@@ -15,14 +15,14 @@ Currently there's limited support for Apple M1 laptops. You can do model trainin
 cd scripts
 ./2_extract_images_from_video_data_src.sh  
 ./3_extract_images_from_video_data_dst.sh
-./4.1_data_src_extract_faces_S3FD.sh 
-./5_data_dst_extract_faces_S3FD_all_GPU.sh 
-./5.1_data_dst_extract_faces_S3FD.sh 
-./5.2_data_dst_util_faceset_enhance.sh
-./5.3_data_dst_sort_by_face_yaw.sh
-./5.4_data_dst_facesettool.sh
-./6_train_Quick96.sh 
-./7_convert_Quick96.sh
+./4.1_data_src_extract_faces_S3FD.sh <<< on GPU
+./5_data_dst_extract_faces_S3FD_all_GPU.sh <<< on GPU
+./5.1_data_dst_extract_faces_S3FD.sh <<< on GPU
+./5.2_data_dst_util_faceset_enhance.sh <<< on GPU
+./5.3_data_dst_sort_by_face_yaw.sh <<< on GPU
+./5.4_data_dst_facesettool.sh <<< on GPU
+./6_train_Quick96.sh <<< on GPU
+./7_convert_Quick96.sh <<< on CPU
 ./8_converted_to_avi.sh 
 
 ```
