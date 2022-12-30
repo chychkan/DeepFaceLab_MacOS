@@ -1,5 +1,5 @@
 numpy==1.21.4
-opencv-contrib-python-headless==4.1.2.30
+opencv-contrib-python-headless==4.7.0.68
 scipy==1.7.2
 tensorflow==2.7.4
 colorama==0.4.4
