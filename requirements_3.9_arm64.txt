@@ -10,4 +10,6 @@ Pillow==8.4.0
 scikit-image==0.19.1
 scipy==1.8.0
 tensorflow-macos==2.7.0
+tensorflow-metal
+PySide6
 PyQt6==6.2.3
