@@ -14,7 +14,7 @@ is_arm64 && echo "Running on Apple M1 chip"
 
 if [ ! -d .dfl/DeepFaceLab ]; then
   echo "Cloning DeepFaceLab"
-  git clone --no-single-branch --depth 1 "https://github.com/chychkan/DeepFaceLab.git" .dfl/DeepFaceLab
+  git clone --no-single-branch --depth 1 "https://github.com/jkennedyvz/DeepFaceLab.git" .dfl/DeepFaceLab
 
   if is_arm64; then
     (cd .dfl/DeepFaceLab; git checkout support-arm64)
@@ -22,7 +22,7 @@ if [ ! -d .dfl/DeepFaceLab ]; then
 fi
 
 if [ ! -d .dfl/env ]; then
-  virtualenv -p python3 .dfl/env
+  virtualenv -p python3.9 .dfl/env
 fi
 
 source .dfl/env/bin/activate
