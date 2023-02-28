@@ -8,6 +8,21 @@ You'll need `git`, `ffmpeg`, `python3` and python module `virtualenv` available 
 
 Currently there's limited support for Apple M1 laptops. You can do model training, but the XSeg editor currently does not work (the DeepFaceLab codebase is not compatible with PyQt6).
 
+## NOTE: FULL RUN M1
+
+```
+
+cd scripts
+./2_extract_images_from_video_data_src.sh  
+./3_extract_images_from_video_data_dst.sh
+./4.1_data_src_extract_faces_S3FD.sh <<< on GPU
+./5_data_dst_extract_faces_S3FD_best_GPU.sh <<< on GPU
+./6_train_Quick96.sh <<< on GPU
+./7_convert_Quick96.sh <<< on CPU
+./8_converted_to_avi.sh 
+
+```
+
 ## Setup
 
 **Tools**
