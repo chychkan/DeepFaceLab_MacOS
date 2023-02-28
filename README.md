@@ -41,6 +41,14 @@ Check if you have it with `brew ls --versions hdf5`. Install it with `brew insta
 1. Clone this repository (`git clone https://github.com/ngardelis/MacOS.git`)
 2. Run script `./scripts/0_setup.sh` to get [DeepFaceLab](https://github.com/iperov/DeepFaceLab), create virtual env and install necessary Python dependencies. This may take several minutes to run.
 
+**Temporary bug and workaround**
+
+At this point, you may run into different problems. It appears there is a bug in the latest update to protobuf. To get around this, force a downgrade in your Python environment:
+
+- Run: source .dfl/env/bin/activate
+- Run: pip3.9 install 'protobuf~=3.19.0'
+- Run: deactivate
+
 Now you can put your `data_src.mp4` and `data_dst.mp4` files into the `workspace/` dir and start running scripts from the `scripts/` dir.
 
 ## Tutorials and docs
