@@ -6,7 +6,22 @@ You'll need `git`, `ffmpeg`, `python3` and python module `virtualenv` available 
 
 ## NOTE: Apple M1 chip
 
-Currently there's limited support for Apple M1 laptops. You can do model training, but the XSeg editor currently does not work (the DeepFaceLab codebase is not compatible with PyQt6).
+Currently there's limited support for Apple M1 laptops. You can do model training, but the XSeg editor currently does not work (the DeepFaceLab codebase is not compatible with PyQt6). Although this repo also uses PySide6 from https://github.com/iperov/DeepFaceLab
+
+## NOTE: FULL RUN M1
+
+```
+
+cd scripts
+./2_extract_images_from_video_data_src.sh  
+./3_extract_images_from_video_data_dst.sh
+./4.1_data_src_extract_faces_S3FD.sh <<< on GPU
+./5_data_dst_extract_faces_S3FD_best_GPU.sh <<< on GPU
+./6_train_SAEHD.sh <<< on GPU
+./7_merge_SAEHD.sh <<< on CPU
+./8_merged_to_mp4.sh
+
+```
 
 ## Setup
 
@@ -23,8 +38,16 @@ Check if you have it with `brew ls --versions hdf5`. Install it with `brew insta
 
 **Clone and setup**
 
-1. Clone this repository (`git clone https://github.com/chychkan/DeepFaceLab_MacOS.git`)
+1. Clone this repository (`git clone https://github.com/ngardelis/MacOS.git`)
 2. Run script `./scripts/0_setup.sh` to get [DeepFaceLab](https://github.com/iperov/DeepFaceLab), create virtual env and install necessary Python dependencies. This may take several minutes to run.
+
+**Temporary bug and workaround**
+
+At this point, you may run into different problems. It appears there is a bug in the latest update to protobuf. To get around this, force a downgrade in your Python environment:
+
+- Run: source .dfl/env/bin/activate
+- Run: pip3.9 install 'protobuf~=3.19.0'
+- Run: deactivate
 
 Now you can put your `data_src.mp4` and `data_dst.mp4` files into the `workspace/` dir and start running scripts from the `scripts/` dir.
 
