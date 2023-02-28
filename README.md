@@ -18,8 +18,8 @@ cd scripts
 ./4.1_data_src_extract_faces_S3FD.sh <<< on GPU
 ./5_data_dst_extract_faces_S3FD_best_GPU.sh <<< on GPU
 ./6_train_SAEHD.sh <<< on GPU
-./7_convert_Quick96.sh <<< on CPU
-./8_converted_to_avi.sh 
+./7_merge_SAEHD.sh <<< on CPU
+./8_merged_to_mp4.sh
 
 ```
 
