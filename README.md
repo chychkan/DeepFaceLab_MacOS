@@ -23,7 +23,7 @@ Check if you have it with `brew ls --versions hdf5`. Install it with `brew insta
 
 **Clone and setup**
 
-1. Clone this repository (`git clone https://github.com/chychkan/DeepFaceLab_MacOS.git`)
+1. Clone this repository (`git clone https://github.com/ngardelis/MacOS.git`)
 2. Run script `./scripts/0_setup.sh` to get [DeepFaceLab](https://github.com/iperov/DeepFaceLab), create virtual env and install necessary Python dependencies. This may take several minutes to run.
 
 Now you can put your `data_src.mp4` and `data_dst.mp4` files into the `workspace/` dir and start running scripts from the `scripts/` dir.
