@@ -18,7 +18,7 @@ if [ ! -d .dfl/DeepFaceLab ]; then
 fi
 
 if [ ! -d .venvs/deepfacelab ]; then
-  venv -p python3 ./venvs/deepfacelab
+  virtualenv -p python3 ./venvs/deepfacelab
 fi
 
 source .venvs/deepfacelab/bin/activate
