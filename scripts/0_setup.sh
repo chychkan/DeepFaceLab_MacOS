@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 cd "$(dirname $0)/.."
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 set -e
 
@@ -7,7 +8,7 @@ mkdir -p .venvs
 mkdir -p workspace
 
 is_arm64() {
-  [ "$(uname -sm)" == "Darwin arm64" ]
+ [ "$(uname -sm)" == "Darwin arm64" ]
 }
 
 if [ ! -d .dfl/DeepFaceLab ]; then
@@ -18,7 +19,7 @@ if [ ! -d .dfl/DeepFaceLab ]; then
 fi
 
 if [ ! -d .venvs/deepfacelab ]; then
-  virtualenv -p python3 ./venvs/deepfacelab
+  virtualenv -p python3 .venvs/deepfacelab
 fi
 
 source .venvs/deepfacelab/bin/activate
