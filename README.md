@@ -15,7 +15,8 @@ Currently there's limited support for Apple M1 laptops. You can do model trainin
 cd scripts
 ./2_extract_images_from_video_data_src.sh  
 ./3_extract_images_from_video_data_dst.sh
-./4.1_data_src_extract_faces_S3FD.sh 
+./4.1_data_src_extract_faces_S3FD.sh
+./5.1_data_dst_extract_faces_S3FD.sh
 ./6_train_Quick96.sh 
 ./7_convert_Quick96.sh
 ./8_converted_to_avi.sh 
