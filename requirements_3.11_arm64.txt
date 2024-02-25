@@ -17,7 +17,7 @@ networkx<=2.8.4
 packaging<=21.3
 image
 timm
-PlL
+pillow
 moviepy
 absl-py<=1.1.0
 astunparse
