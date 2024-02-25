@@ -1,32 +1,27 @@
 #!/usr/bin/env bash
 cd "$(dirname $0)/.."
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 set -e
 
-mkdir -p .dfl
+mkdir -p .venvs
 mkdir -p workspace
 
 is_arm64() {
   [ "$(uname -sm)" == "Darwin arm64" ]
 }
 
-is_arm64 && echo "Running on Apple M1 chip"
-
 if [ ! -d .dfl/DeepFaceLab ]; then
   echo "Cloning DeepFaceLab"
   git clone --no-single-branch --depth 1 "https://github.com/Smiril/DeepFaceLab_Apple-Silicon.git" .dfl/DeepFaceLab
 
-  if is_arm64; then
-    (cd .dfl/DeepFaceLab; git checkout master)
-  fi
+    (cd .dfl/DeepFaceLab; git checkout main)
 fi
 
-if [ ! -d .dfl/env ]; then
-  virtualenv -p python3 .dfl/env
+if [ ! -d .venvs/deepfacelab ]; then
+  venv -p python3 ./venvs/deepfacelab
 fi
 
-source .dfl/env/bin/activate
+source .venvs/deepfacelab/bin/activate
 
 python3 -m pip install --upgrade pip
 
