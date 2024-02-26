@@ -30,12 +30,13 @@ if [ ! -d .dfl/ffmpeg ]; then
   git clone --no-single-branch --depth 1 "https://github.com/kkroening/ffmpeg-python.git" .dfl/ffmpeg
 
      (cd .dfl/ffmpeg; git checkout main)
-     (cp -R .dfl/ffmpeg/ffmpeg .dfl/deepfacelab/lib/python3.11/site-packages/)
 fi
 
 if [ ! -d .dfl/deepfacelab ]; then
   virtualenv -p python3 .dfl/deepfacelab
 fi
+
+cp -R .dfl/ffmpeg/ffmpeg .dfl/deepfacelab/lib/python3.11/site-packages/
 
 source .dfl/env/bin/activate
 
