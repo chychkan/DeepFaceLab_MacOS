@@ -55,8 +55,6 @@ reqs_file="requirements${version_suffix}${architecture_suffix}.txt"
 
 echo "Using $reqs_file for $(python3 -V)"
 
-cp -R .dfl/ffmpeg/ffmpeg .dfl/deepfacelab/lib/python3.11/site-packages/
-
 if is_arm64; then
   if [[ -z "$(brew ls --versions hdf5)" ]]; then
     echo "ERROR: HDF5 needs to be installed to run DeepFaceLab on M1 chip."
@@ -81,6 +79,8 @@ elif [ "$version" == "3.10" ]; then
 fi
 
 pip --no-cache-dir install -r $reqs_file
+
+cp -R .dfl/ffmpeg/ffmpeg .dfl/deepfacelab/lib/python3.11/site-packages/
 
 source .dfl/env/bin/activate
 
