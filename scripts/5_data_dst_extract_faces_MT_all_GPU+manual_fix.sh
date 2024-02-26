@@ -5,7 +5,6 @@ source scripts/env.sh
 $DFL_PYTHON "$DFL_MAIN" extract \
     --input-dir "$DFL_WORKSPACE/data_dst" \
     --output-dir "$DFL_WORKSPACE/data_dst/aligned" \
-    --multi-gpu \
     --detector mt \
     --manual-fix \
     --debug-dir "$DFL_WORKSPACE/data_dst/aligned_debug"
