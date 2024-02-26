@@ -26,7 +26,7 @@ if [ ! -d .dfl/env ]; then
 fi
 
 if [ ! -d .dfl/ffmpeg ]; then
-  echo "Cloning ffmpeg for python3.11"
+  echo "Cloning ffmpeg for python3.X"
   git clone --no-single-branch --depth 1 "https://github.com/kkroening/ffmpeg-python.git" .dfl/ffmpeg
 
      (cd .dfl/ffmpeg; git checkout master)
