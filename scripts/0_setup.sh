@@ -36,6 +36,8 @@ if [ ! -d .dfl/deepfacelab ]; then
   virtualenv -p python3.11 .dfl/deepfacelab
 fi
 
+source .dfl/deepfacelab/bin/activate
+
 python3 -m pip install --upgrade pip
 
 version=$(python3 -V | cut -f 2 -d ' ' | cut -f 1,2 -d .)
@@ -81,7 +83,5 @@ fi
 pip --no-cache-dir install -r $reqs_file
 
 cp -R .dfl/ffmpeg/ffmpeg .dfl/deepfacelab/lib/python3.11/site-packages/
-
-source .dfl/env/bin/activate
 
 echo "Done."
