@@ -4,7 +4,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 set -e
 
-mkdir -p .venvs
+mkdir -p .dfl
 mkdir -p workspace
 
 is_arm64() {
