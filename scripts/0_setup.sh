@@ -29,7 +29,7 @@ if [ ! -d .dfl/ffmpeg ]; then
   echo "Cloning ffmpeg for python3.11"
   git clone --no-single-branch --depth 1 "https://github.com/kkroening/ffmpeg-python.git" .dfl/ffmpeg
 
-     (cd .dfl/ffmpeg; git checkout main)
+     (cd .dfl/ffmpeg; git checkout master)
 fi
 
 if [ ! -d .dfl/deepfacelab ]; then
