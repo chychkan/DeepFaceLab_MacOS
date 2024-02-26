@@ -8,7 +8,23 @@ DFL_PYTHON=python
 DFL_MAIN=.dfl/DeepFaceLab/main.py
 WORKSPACE=workspace
 DFL_WORKSPACE=workspace
-source .dfl/env/bin/activate
 
-set -e
+newpy () { echo "Will run in python3.11 mode"; }
 
+oldpy () { echo "Will not run in python3.10 mode"; }
+
+echo "Would you like to run script in python3.11 mode? (yes or no)"
+
+read yesorno
+
+if [ "$yesorno" = yes ]; then
+    newpy
+    source .dfl/deepfacelab/bin/activate
+
+elif [ "$yesorno" = no ]; then
+    oldpy
+    source .dfl/env/bin/activate
+else
+    echo "Not a valid answer."
+    exit 1
+fi
