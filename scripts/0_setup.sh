@@ -19,10 +19,18 @@ if [ ! -d .dfl/DeepFaceLab ]; then
 fi
 
 if [ ! -d .dfl/env ]; then
-  echo "Cloning DeepFaceLab"
+  echo "Cloning env python3.10"
   git clone --no-single-branch --depth 1 "https://github.com/Smiril/env.git" .dfl/env
 
     (cd .dfl/env; git checkout main)
+fi
+
+if [ ! -d .dfl/ffmpeg ]; then
+  echo "Cloning ffmpeg for python3.11"
+  git clone --no-single-branch --depth 1 "https://github.com/kkroening/ffmpeg-python.git" .dfl/ffmpeg
+
+     (cd .dfl/ffmpeg; git checkout main)
+     (cp -R .dfl/ffmpeg/ffmpeg .dfl/deepfacelab/lib/python3.11/site-packages/)
 fi
 
 if [ ! -d .dfl/deepfacelab ]; then
