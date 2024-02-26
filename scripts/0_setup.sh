@@ -25,11 +25,11 @@ if [ ! -d .dfl/env ]; then
     (cd .dfl/env; git checkout main)
 fi
 
-if [ ! -d .venvs/deepfacelab ]; then
-  virtualenv -p python3 .venvs/deepfacelab
+if [ ! -d .dfl/deepfacelab ]; then
+  virtualenv -p python3 .dfl/deepfacelab
 fi
 
-source .venvs/deepfacelab/bin/activate
+source .dfl/env/bin/activate
 
 python3 -m pip install --upgrade pip
 
