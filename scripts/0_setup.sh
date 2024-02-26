@@ -82,6 +82,6 @@ fi
 
 pip --no-cache-dir install -r $reqs_file
 
-cp -R .dfl/ffmpeg/ffmpeg .dfl/deepfacelab/lib/python$(python3 -V)/site-packages/
+cp -R .dfl/ffmpeg/ffmpeg .dfl/deepfacelab/lib/python$(version)/site-packages/
 
 echo "Done."
