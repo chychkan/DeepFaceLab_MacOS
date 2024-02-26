@@ -33,7 +33,7 @@ if [ ! -d .dfl/ffmpeg ]; then
 fi
 
 if [ ! -d .dfl/deepfacelab ]; then
-  virtualenv -p python3 .dfl/deepfacelab
+  virtualenv -p python3.11 .dfl/deepfacelab
 fi
 
 cp -R .dfl/ffmpeg/ffmpeg .dfl/deepfacelab/lib/python3.11/site-packages/
