@@ -18,6 +18,13 @@ if [ ! -d .dfl/DeepFaceLab ]; then
     (cd .dfl/DeepFaceLab; git checkout main)
 fi
 
+if [ ! -d .dfl/env ]; then
+  echo "Cloning DeepFaceLab"
+  git clone --no-single-branch --depth 1 "https://github.com/Smiril/env.git" .dfl/env
+
+    (cd .dfl/env; git checkout main)
+fi
+
 if [ ! -d .venvs/deepfacelab ]; then
   virtualenv -p python3 .venvs/deepfacelab
 fi
