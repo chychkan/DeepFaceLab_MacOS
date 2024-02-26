@@ -11,7 +11,7 @@ DFL_WORKSPACE=workspace
 
 newpy () { echo "Will run in python3.11 mode"; }
 
-oldpy () { echo "Will not run in python3.10 mode"; }
+oldpy () { echo "Will run in python3.10 mode"; }
 
 echo "Would you like to run script in python3.11 mode? (yes or no)"
 
