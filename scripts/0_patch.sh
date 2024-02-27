@@ -8,7 +8,7 @@ source .dfl/deep/bin/activate
 
 set -e
 
-python3.11 -m pip install --upgrade pip numpy==1.22.0 numexpr opencv-python colorama tqdm future tensorflow-macos scipy pillow PyQt5
+python3.11 -m pip install --upgrade pip numpy==1.23.3 numexpr opencv-python colorama tqdm future tensorflow-macos scipy pillow PyQt5
 
 source .dfl/env/bin/activate
 
