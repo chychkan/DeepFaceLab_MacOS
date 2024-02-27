@@ -28,3 +28,5 @@ else
     echo "Not a valid answer."
     exit 1
 fi
+
+set -e 
