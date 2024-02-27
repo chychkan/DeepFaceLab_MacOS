@@ -95,5 +95,6 @@ torchvision<=0.17.1
 torchaudio<=2.2.1
 insightface<=0.2.1
 ipython<=7.21.0
+PyQt5
 PyQt6<=6.2.3
 git+https://www.github.com/keras-team/keras-contrib.git
