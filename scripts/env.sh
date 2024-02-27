@@ -19,7 +19,7 @@ read yesorno
 
 if [ "$yesorno" = yes ]; then
     newpy
-    source .dfl/deepfacelab/bin/activate
+    source .dfl/deep/bin/activate
 
 elif [ "$yesorno" = no ]; then
     oldpy
