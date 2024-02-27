@@ -16,6 +16,6 @@ set -e
 
 python3.10 -m pip install --upgrade pip numpy opencv-python colorama tqdm future tensorflow-macos scipy
 
-cp -R .dfl/ffmpeg/ffmpeg .dfl/deep/lib/python$(version)/site-packages/
+cp -R .dfl/ffmpeg/ffmpeg .dfl/deep/lib/python3.11/site-packages/
 
 echo "Done."
