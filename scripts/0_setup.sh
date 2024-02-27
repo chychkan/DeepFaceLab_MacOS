@@ -32,11 +32,11 @@ if [ ! -d .dfl/ffmpeg ]; then
      (cd .dfl/ffmpeg; git checkout master)
 fi
 
-if [ ! -d .dfl/deepfacelab ]; then
-  virtualenv -p python3.11 .dfl/deepfacelab
+if [ ! -d .dfl/deep ]; then
+  virtualenv -p python3.11 .dfl/deep
 fi
 
-source .dfl/deepfacelab/bin/activate
+source .dfl/deep/bin/activate
 
 python3 -m pip install --upgrade pip
 
@@ -82,6 +82,6 @@ fi
 
 pip --no-cache-dir install -r $reqs_file
 
-cp -R .dfl/ffmpeg/ffmpeg .dfl/deepfacelab/lib/python$(version)/site-packages/
+cp -R .dfl/ffmpeg/ffmpeg .dfl/deep/lib/python$(version)/site-packages/
 
 echo "Done."
