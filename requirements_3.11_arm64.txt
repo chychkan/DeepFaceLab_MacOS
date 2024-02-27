@@ -8,6 +8,7 @@ scipy<=1.8.1
 tifffile<=2022.5.4
 pyparsing==3.0.9
 pillow
+future
 tqdm<=4.64.0
 colorama<=0.4.4
 cython<=0.29.26
