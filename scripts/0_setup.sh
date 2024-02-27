@@ -57,7 +57,7 @@ reqs_file="requirements${version_suffix}${architecture_suffix}.txt"
 
 echo "Using $reqs_file for $(python3 -V)"
 
-if is_arm64; then
+if [ is_arm64 ] ; then
   if [[ -z "$(brew ls --versions hdf5)" ]]; then
     echo "ERROR: HDF5 needs to be installed to run DeepFaceLab on M1 chip."
     echo "You can install it with 'brew install hdf5'. For more details, see https://formulae.brew.sh/formula/hdf5"
