@@ -14,7 +14,7 @@ source .dfl/env/bin/activate
 
 set -e
 
-python3.10 -m pip install --upgrade pip numpy numexpr opencv-python colorama tqdm future tensorflow-macos scipy pillow PyQt5  protobuf<=3.20.1>=3.12.2
+python3.10 -m pip install --upgrade pip numpy numexpr opencv-python colorama tqdm future tensorflow-macos scipy pillow PyQt5  protobuf>=3.12.2
 
 cp -R .dfl/ffmpeg/ffmpeg .dfl/deep/lib/python3.11/site-packages/
 
