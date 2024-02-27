@@ -6,7 +6,7 @@ You'll need `git`, `ffmpeg`, `python3` and python module `virtualenv` available 
 
 ## NOTE: Apple M1 chip
 
-Currently there's limited support for Apple M1 laptops. You can do model training, but the XSeg editor currently does work (the DeepFaceLab codebase is not compatible with PyQt6 but with PyQt5).
+Currently there's limited support for Apple M1 laptops. You can do model training, and the XSeg editor currently does work (the DeepFaceLab codebase is not compatible with PyQt6 but with PyQt5).
 
 ## NOTE: FULL RUN M1
 
