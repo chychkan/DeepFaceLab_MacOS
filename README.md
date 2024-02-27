@@ -13,6 +13,8 @@ Currently there's limited support for Apple M1 laptops. You can do model trainin
 ```
 
 cd scripts
+./0_setup.sh
+./0_patch.sh
 ./2_extract_images_from_video_data_src.sh  
 ./3_extract_images_from_video_data_dst.sh
 ./4.1_data_src_extract_faces_S3FD.sh
