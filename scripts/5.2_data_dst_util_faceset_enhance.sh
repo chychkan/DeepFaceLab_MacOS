@@ -2,5 +2,5 @@
 cd "$(dirname $0)/.."
 source scripts/env.sh
 
-python "$DFL_MAIN" facesettool enhance \
+$DFL_PYTHON "$DFL_MAIN" facesettool enhance \
   --input-dir "$WORKSPACE/data_dst/aligned"
