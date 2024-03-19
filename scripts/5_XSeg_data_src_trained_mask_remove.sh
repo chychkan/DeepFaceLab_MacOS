@@ -2,5 +2,5 @@
 cd "$(dirname $0)/.."
 source scripts/env.sh
 
-python "$DFL_MAIN" xseg remove \
+$DFL_PYTHON "$DFL_MAIN" xseg remove \
   --input-dir "$WORKSPACE/data_src/aligned"
