@@ -2,5 +2,5 @@
 cd "$(dirname $0)/.."
 source scripts/env.sh
 
-python "$DFL_MAIN" xseg fetch \
+$DFL_PYTHON "$DFL_MAIN" xseg fetch \
   --input-dir "$WORKSPACE/data_src/aligned"
